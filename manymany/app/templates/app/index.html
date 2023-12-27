@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="/db/create/">Add new student</a>
+        <hr>
+    </div>
+    {% for student in students %}
+
+    <p>Student {{ student.name }}</p>
+    <p>Course: 
+        {% for course in student.course.all %}
+        {{ course.name }}
+        {% endfor %}
+    </p>
+
+    <hr>
+
+    {% endfor %}
+</body>
+</html>
